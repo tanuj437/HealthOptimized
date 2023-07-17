@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+          text-align: center;
+        }
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          padding-top: 10cm;
+        }
+
+        .form-slide {
+          display: none;
+        }
+
+        .form-slide.active {
+          display: block;
+        }
+
+        .form-group {
+          margin-bottom: 20px;
+        }
+
+        label {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+
+        input[type="range"] {
+          width: 100%;
+        }
+
+        button[type="submit"],
+        .next-button {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        button[type="submit"]:hover,
+        .next-button:hover {
+          background-color: #45a049;
+        }
+    </style>
+    <title>HealthCare Form</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Your HealthCare Form</h1>
+        <form id="userForm" action="/submit" method="post">
+            <div class="form-slide active" id="slide1">
+                <input type="hidden" name="Name" value="{{ name }}">
+                <input type="hidden" name="Email" value="{{ email }}">
+                <div class="form-group">
+                    <label for="Age">Age:</label>
+                    <input type="text" id="Age" name="Age" required>
+                </div>
+                <div class="form-group">
+                    <label for="Weight">Weight:</label>
+                    <input type="text" id="Weight" name="Weight" required>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height:</label>
+                    <input type="text" id="Height" name="Height" required>
+                </div>
+                <div class="form-group">
+                    <label for="Sex">Sex:</label>
+                    <select id="Sex" name="Sex" required>
+                        <option value="">Select</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="0">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="HighBP">High Blood Pressure:</label>
+                    <select id="HighBP" name="HighBP" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="HighChol">High Cholesterol:</label>
+                    <select id="HighChol" name="HighChol" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="CholCheck">Cholesterol Check:</label>
+                    <select id="CholCheck" name="CholCheck" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="BMI">BMI (Body Mass Index):</label>
+                    <input type="text" id="BMI" name="BMI" required>
+                </div>
+                <div class="form-group">
+                    <label for="Smoker">Smoker:</label>
+                    <select id="Smoker" name="Smoker" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Stroke">Stroke:</label>
+                    <select id="Stroke" name="Stroke" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="PhysActivity">Physical Activity:</label>
+                    <input type="range" id="PhysActivity" name="PhysActivity" min="0" max="10" value="5" required>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="Fruits">Fruits Consumption:</label>
+                    <select id="Fruits" name="Fruits" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Veggies">Vegetables Consumption:</label>
+                    <select id="Veggies" name="Veggies" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="next-button" type="button" onclick="nextSlide(1)">Next</button>
+                </div>
+            </div>
+            <div class="form-slide" id="slide2">
+                <div class="form-group">
+                    <label for="AlcoholUse">Alcohol Use:</label>
+                    <input type="range" id="AlcoholUse" name="AlcoholUse" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="DustAllergy">Dust Allergy:</label>
+                    <input type="range" id="DustAllergy" name="DustAllergy" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="OccuPationalHazards">Occupational Hazards:</label>
+                    <input type="range" id="OccuPationalHazards" name="OccuPationalHazards" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="GeneticRisk">Genetic Risk:</label>
+                    <input type="range" id="GeneticRisk" name="GeneticRisk" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="ChronicLungDisease">Chronic Lung Disease:</label>
+                    <input type="range" id="ChronicLungDisease" name="ChronicLungDisease" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="BalancedDiet">Balanced Diet:</label>
+                    <input type="range" id="BalancedDiet" name="BalancedDiet" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="Obesity">Obesity:</label>
+                    <input type="range" id="Obesity" name="Obesity" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="Smoking">Smoking:</label>
+                    <input type="range" id="Smoking" name="Smoking" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="PassiveSmoker">Passive Smoker:</label>
+                    <input type="range" id="PassiveSmoker" name="PassiveSmoker" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="ChestPain">Chest Pain:</label>
+                    <input type="range" id="ChestPain" name="ChestPain" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="CoughingofBlood">Coughing of Blood:</label>
+                    <input type="range" id="CoughingofBlood" name="CoughingofBlood" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="Fatigue">Fatigue:</label>
+                    <input type="range" id="Fatigue" name="Fatigue" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="WeightLoss">Weight Loss:</label>
+                    <input type="range" id="WeightLoss" name="WeightLoss" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="ShortnessofBreath">Shortness of Breath:</label>
+                    <input type="range" id="ShortnessofBreath" name="ShortnessofBreath" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="Wheezing">Wheezing:</label>
+                    <input type="range" id="Wheezing" name="Wheezing" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="SwallowingDifficulty">Swallowing Difficulty:</label>
+                    <input type="range" id="SwallowingDifficulty" name="SwallowingDifficulty" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="ClubbingofFingerNails">Clubbing of Finger Nails:</label>
+                    <input type="range" id="ClubbingofFingerNails" name="ClubbingofFingerNails" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="FrequentCold">Frequent Cold:</label>
+                    <input type="range" id="FrequentCold" name="FrequentCold" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="DryCough">Dry Cough:</label>
+                    <input type="range" id="DryCough" name="DryCough" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="Snoring">Snoring:</label>
+                    <input type="range" id="Snoring" name="Snoring" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <button class="next-button" type="button" onclick="prevSlide(2)">Previous</button>
+                    <button class="next-button" type="button" onclick="nextSlide(2)">Next</button>
+                </div>
+            </div>
+            <div class="form-slide" id="slide3">
+                <div class="form-group">
+                    <label for="HvyAlcoholConsump">Heavy Alcohol Consumption:</label>
+                    <select id="HvyAlcoholConsump" name="HvyAlcoholConsump" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="AnyHealthcare">Any Healthcare Access:</label>
+                    <select id="AnyHealthcare" name="AnyHealthcare" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="NoDocbcCos">No. of Doctor Consults:</label>
+                    <input type="text" id="NoDocbcCos" name="NoDocbcCos" required>
+                </div>
+                <div class="form-group">
+                    <label for="GenHlth">General Health:</label>
+                    <input type="range" id="GenHlth" name="GenHlth" min="0" max="30" value="15" required>
+                </div>
+                <div class="form-group">
+                    <label for="MentHlth">Mental Health:</label>
+                    <input type="range" id="MentHlth" name="MentHlth" min="0" max="30" value="15" required>
+                </div>
+                <div class="form-group">
+                    <label for="PhysHlth">Physical Health:</label>
+                    <input type="range" id="PhysHlth" name="PhysHlth" min="0" max="30" value="15" required>
+                </div>
+                <div class="form-group">
+                    <label for="DiffWalk">Difficulty in Walking:</label>
+                    <input type="range" id="DiffWalk" name="DiffWalk" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="AirPollution">Air Pollution:</label>
+                    <input type="range" id="AirPollution" name="AirPollution" min="0" max="10" value="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="AvgGulocoseLevel">Average Glucose Level:</label>
+                    <input type="text" id="AvgGulocoseLevel" name="AvgGulocoseLevel" required>
+                </div>
+                <div class="form-group">
+                    <label for="EverMarried">Ever Married:</label>
+                    <select id="EverMarried" name="EverMarried" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Hypertension">Hypertension:</label>
+                    <select id="Hypertension" name="Hypertension" required>
+                        <option value="">Select</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="WorkType">Work Type:</label>
+                    <select id="WorkType" name="WorkType" required>
+                        <option value="">Select</option>
+                        <option value="1">Private</option>
+                        <option value="2">Self-employed</option>
+                        <option value="3">Government job</option>
+                        <option value="4">Children</option>
+                        <option value="5">Never Worked</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="SmokingStatus">Current Smoking Status:</label>
+                    <select id="SmokingStatus" name="SmokingStatus" required>
+                        <option value="">Select</option>
+                        <option value="0">Never</option>
+                        <option value="0">Not Wanna tell</option>
+                        <option value="1">Formerly Smoked</option>
+                        <option value="2">Smokes</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="next-button" type="button" onclick="prevSlide(3)">Previous</button>
+                    <button class="next-button" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript functions for navigating between form slides
+        function nextSlide(slideNumber) {
+            document.getElementById('slide' + slideNumber).classList.remove('active');
+            document.getElementById('slide' + (slideNumber + 1)).classList.add('active');
+        }
+
+        function prevSlide(slideNumber) {
+            document.getElementById('slide' + slideNumber).classList.remove('active');
+            document.getElementById('slide' + (slideNumber - 1)).classList.add('active');
+        }
+    </script>
+</body>
+</html>

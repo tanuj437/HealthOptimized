@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/eabb5c57ee.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/stylecards.css">
+    <title>Heart prediction</title>
+</head>
+<body>
+    <header>
+        <img src="static/images/Mainlogo.png" alt="Logo" class="logo">
+        <!-- Rest of your header content -->
+        <nav class="navigation">
+            <div class="navbar">
+                <a href="#"><i class="fa-solid fa-users"></i></a> <!-- Replace "fa fa-sign-in" with the appropriate Font Awesome class for the login icon -->
+                <a href="#"><i class="fa-sharp fa-solid fa-user"></i></a> <!-- Replace "fa fa-user" with the appropriate Font Awesome class for the profile icon -->
+                <a href="#"><i class="fa-sharp fa-solid fa-face-smile"></i></a> <!-- Replace "fa fa-question-circle" with the appropriate Font Awesome class for the assistance icon -->
+            </div>
+        </nav>
+    </header>
+    <div class = 'heart-head'>
+        <h1 class="kya-bola">Can Diabetes be there?</h1>
+        <h2><strong>BMI = {{user_data['BMI']}}</strong></h2>
+        <h4>0: No Risk</h4>
+        <h4>1: Moderate Risk/Quite High Risk</h4>
+        <h4>2: Extreme Rish</h4>
+        <main>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <h1>Diabetes Risk Level is {{diabetes}}</h1>
+              </div>
+        </main>
+    </div>
+    
+</body>
+</html>

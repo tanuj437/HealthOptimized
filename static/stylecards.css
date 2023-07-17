@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+kya-bola{
+    margin-top: 60px;
+}
+h2{
+    text-align: center;
+}
+.btn-btn-primary{
+    margin-left: 39%;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 60px;
+    border-radius: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(233, 231, 232);
+    background-color:rgb(165, 79, 114);
+    margin-bottom: 45px;
+}
+.btn-btn-primary h1{
+    color: blanchedalmond;
+    display: inline;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main{
+    background-color: rgb(27, 52, 46);
+    margin-top: 80px;
+}
+.heart-head{
+    background-color: rgb(165, 79, 114);
+    margin-left: 28px;
+    border-radius: 25px;
+}

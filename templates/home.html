@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HealthOptimized</title>
+        <link rel="stylesheet" href="static/style.css">
+        <script src="https://kit.fontawesome.com/eabb5c57ee.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+        <header>
+            <img src="static/images/Mainlogo.png" alt="Logo" class="logo">
+
+            <!-- Rest of your header content -->
+            <nav class="navigation">
+                <div class="navbar">
+                    <a href="#"><i class="fa-solid fa-users"></i></a> <!-- Replace "fa fa-sign-in" with the appropriate Font Awesome class for the login icon -->
+                    <a href="#"><i class="fa-sharp fa-solid fa-user"></i></a> <!-- Replace "fa fa-user" with the appropriate Font Awesome class for the profile icon -->
+                    <a href="#"><i class="fa-sharp fa-solid fa-face-smile"></i></a> <!-- Replace "fa fa-question-circle" with the appropriate Font Awesome class for the assistance icon -->
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="container large">
+                <h1 class="page-title ">Health at ease</h1><br>
+   <h1 class="page-title">Welcome, {{ user_data[0]['Name'] }}</h1>
+                <div class="page-subtitle" >
+                    <pre class="sub-pre">
+
+     Discover the key to better health with our comprehensive health report predictions. 
+     Take charge of your health journey and make informed choices for a happier and healthier life.
+                    </pre>
+                </div>
+                <br>
+            </div>
+            <div class="ag-format-container">
+                <div class="ag-courses_box">
+
+                  <div class="ag-courses_item">
+                    <a href="/Heartrisk" class="ag-courses-item_link">
+                      <div class="ag-courses-item_bg"></div>
+              
+                      <div class="ag-courses-item_title">
+                        Heart Disease Prediction
+                      </div>
+                    </a>
+                  </div> 
+              
+                  <div class="ag-courses_item">
+                    <a href="/diabetesrisk" class="ag-courses-item_link">
+                      <div class="ag-courses-item_bg">
+                      </div>
+                      <div class="ag-courses-item_title">
+                        Diabetes Prediction
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ag-courses_item">
+                    <a href="/cancerrisk" class="ag-courses-item_link">
+                      <div class="ag-courses-item_bg"></div>
+              
+                      <div class="ag-courses-item_title">
+                        Cancer Pridiction
+                      </div>
+                    </a>
+                  </div>
+              
+                </div>
+              </div>
+              <footer>
+                <div class="footer-content">
+                  <div class="footer-section">
+                    <h3 class="About">About Us</h3>
+                    <p>Our website is a project developed for a hackathon competition. It serves as a comprehensive health risk predictor, specifically targeting cancer, heart disease, and diabetes. By analyzing user-provided data and utilizing predictive algorithms, we aim to empower individuals with valuable insights into their health risks and promote proactive healthcare management</p>
+                  </div>
+                  <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-bottom">
+                  <p>&copy; 2023 Your Website. All rights reserved.</p>
+                </div>
+            </footer>              
+    </body>
+</html>
